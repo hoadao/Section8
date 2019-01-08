@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The first generation of Nacked Humans</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(){
+                this.weight=10;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            isEmpty(){
+                if(this.weight==0){
+                    return true;
+                }
+                else
+                    return false;
+            }
+            decrease(){
+                this.weight-=1;
+            }
+        }
+        class Human{
+            constructor(name,gender,weight){
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            isMale(){
+                return this.gender; //true=male, false= female
+            }
+            setGender(boo){
+                this.gender=boo;
+            }
+            checkApple(apple){
+                if(apple.isEmpty()){
+                    alert("Het tao!");
+                }
+                else{
+                    alert("Con "+apple.weight+" mieng tao!");
+                }
+            }
+            eat(apple){
+                document.write("</br>"+this.name+" da an mot mieng tao.");
+                apple.decrease();
+            }
+            say(someThing){
+                alert(someThing);
+            }
+            getName(){
+                return this.name;
+            }
+            setName(temp){
+                this.name=temp;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            setWeight(temp){
+                this.weight=temp;
+            }
+        }
+        var apple1=new Apple();
+        document.write("Dau tien co: "+apple1.weight+" mieng tao!");
+        var adam= new Human("Adam",true,65);
+        var eva = new Human("Eva",false,45);
+        while(apple1.weight>0){
+            adam.eat(apple1);
+            eva.eat(apple1);
+        }
+    </script>
+</body>
+</html>
